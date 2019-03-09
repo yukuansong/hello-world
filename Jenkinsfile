@@ -2,6 +2,10 @@ pipeline {
     agent {
         docker {image 'maven:3.3.3'}
     }
+    environment {
+        DISABLE_AUTH = 'true'
+        DB_ENGINE = 'sqlite'
+    }
     stages {
         stage('build') {
             steps {
@@ -11,6 +15,11 @@ pipeline {
                     echo "Multiline shell steps works too"
                     ls -lah
                 '''
+            }
+        }
+        stage('test') {
+            steps {
+                sh 'printenv'
             }
         }
     }
