@@ -31,9 +31,9 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-            mail to: 'yukuan.song@gmail.com',
-                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
-                 body: "The build is successful: ${env.BUILD_URL}"
+            slackSend channel: '#yukuansong-devops',
+                  color: 'good',
+                  message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
         }
         failure {
             echo 'This will run only if failed'
