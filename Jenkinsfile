@@ -52,7 +52,7 @@ pipeline {
             slackSend channel: '#my-project',
                   color: 'good',
                   baseUrl: 'yukuansong.slack.com',
-                  tokenCredentialId: 'xoxp-573413843862-573049175751-571402292289-6a9ac893b0040a42ceea9e27916f442c'
+                  tokenCredentialId: 'xoxp-573413843862-573049175751-571402292289-6a9ac893b0040a42ceea9e27916f442c',
                   message: "The pipeline ${currentBuild.fullDisplayName} completed successfully."
         }
         failure {
