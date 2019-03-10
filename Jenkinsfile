@@ -24,6 +24,24 @@ pipeline {
                 sh 'printenv'
             }
         }
+
+        stage('deploy -- staging') {
+            steps {
+                sh 'echo "Running the smoking tests"'
+            }
+        }
+
+        stage('Sanity check') {
+            steps {
+                input "Does the staging environment look ok?"
+            }
+        }
+
+        stage('deploy -- production') {
+            steps {
+                sh 'echo "Deploying"'
+            }
+        }
     }
     post {
         always {
