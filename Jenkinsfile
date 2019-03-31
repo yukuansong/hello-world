@@ -17,7 +17,7 @@ pipeline {
     post {
         always {
             echo 'This will always run'
-            sh 'sudo apt-get install cowsay'
+            sh 'apt-get install cowsay'
         }
         success {
             echo 'This will run only if successful'
