@@ -10,6 +10,7 @@ pipeline {
                     echo "multiline shell steps" 
                     ls -lah
                     '''
+                    sh 'mvn clean install'
             }
         }
     }
