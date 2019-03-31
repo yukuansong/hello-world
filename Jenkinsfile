@@ -21,7 +21,7 @@ pipeline {
         success {
             echo 'This will run only if successful'
             junit '**/target/*-reports/*.xml'
-            sh 'rollback.sh'
+            sh 'scripts/rollback.sh'
 
         }
         //success { 
