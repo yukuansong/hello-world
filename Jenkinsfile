@@ -21,7 +21,7 @@ pipeline {
         success {
             echo 'This will run only if successful'
             junit '**/target/*-reports/*.xml'
-            jacoco(execPattern: 'ft-staging/target/jacoco.exec')
+            // jacoco(execPattern: 'ft-staging/target/jacoco.exec')
             sh 'scripts/rollback.sh'
 
         }
