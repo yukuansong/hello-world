@@ -2,6 +2,9 @@ pipeline {
     agent {
         docker {image 'maven:3.3.3'}
     }
+    options {
+        skipStagesAfterUnstable()
+    }
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE = 'sqlite'
@@ -27,8 +30,14 @@ pipeline {
         }
 
         stage('deploy -- staging') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
             steps {
-                sh 'echo "Running the smoking tests"'
+                sh 'echo " ..........deploying....."'
+
             }
         }
 
