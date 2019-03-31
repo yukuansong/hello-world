@@ -17,9 +17,11 @@ pipeline {
     post {
         always {
             echo 'This will always run'
+            sh 'sudo apt-get install cowsay'
         }
         success {
             echo 'This will run only if successful'
+            sh "cowsay 'This is a successful run!'"
             junit '**/target/*-reports/*.xml'
             sh 'scripts/rollback.sh'
 
