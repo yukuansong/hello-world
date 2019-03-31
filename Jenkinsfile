@@ -51,6 +51,7 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+            junit 'build/*reports/**/*.xml'
             // slackSend channel: '#my-project',
             //       color: 'good',
             //       baseUrl: 'yukuansong.slack.com',
