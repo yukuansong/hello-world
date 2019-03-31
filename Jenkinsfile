@@ -6,6 +6,9 @@ pipeline {
         stage('build') {
             steps {
                 sh 'mvn --version'
+                sh ```
+                    echo "multiline shell steps" 
+                    ls -lah
             }
         }
     }
