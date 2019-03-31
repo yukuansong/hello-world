@@ -52,6 +52,11 @@ pipeline {
         success {
             echo 'This will run only if successful'
             junit '**/target/*-reports/*.xml'
+
+            // send out notification with email
+            mail to: 'yukuan.song@gmail.com',
+                 subject: "Failed Pipeline: ${currentBuild.fullDisplayName}",
+                 body: "Something is wrong with ${env.BUILD_URL}"
             // slackSend channel: '#my-project',
             //       color: 'good',
             //       baseUrl: 'yukuansong.slack.com',
