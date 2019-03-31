@@ -5,8 +5,8 @@ pipeline {
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE = 'sqlite'
-        AWS_ACCESS_KEY_ID = credentials('jenkin-aws-access-key-id')
-        AWS_ACCESS_KEY_SECRET = credentials('jenkin-aws-access-key-secret')
+        AWS_ACCESS_KEY_ID = credentials('jenkins-aws-secret-key-id')
+        AWS_ACCESS_KEY_SECRET = credentials('jenkins-aws-secret-access-key')
     }
     stages {
         stage('build') {
