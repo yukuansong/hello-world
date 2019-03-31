@@ -9,6 +9,7 @@ pipeline {
                 sh ```
                     echo "multiline shell steps" 
                     ls -lah
+                    ```
             }
         }
     }
