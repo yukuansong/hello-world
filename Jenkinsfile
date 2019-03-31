@@ -20,6 +20,13 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+            junit '**/target/*-reports/*.xml'
+        /* success {
+                    junit '**/target/*-reports/*.xml'
+                    jacoco(execPattern: 'ft-staging/target/jacoco.exec')
+                    archive "ft-staging/target/**/*"
+        } */
+
         }
         failure {
             echo 'This will run only if failed'
