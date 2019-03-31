@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'mvn --version'
                 sh 'printenv'
-                sh 'echo "Hello World"'
+                sh 'mvn install'
                 sh '''
                     echo "Multiline shell steps works too"
                     ls -lah

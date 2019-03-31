@@ -17,4 +17,14 @@ public class AppTest
     {
         assertTrue( true );
     }
+
+    /**
+     * intended failed test
+     */
+    @Test
+    public void failedTest()
+    {
+        assertTrue(false);
+    }
+
 }
